@@ -1,17 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
+import './App.css'
 
-function Counter(props) {
-  return (
-    <div>
-        ID <strong> {props.id} </strong>
+function AddCounterForm(props) {
+    const [name, setName] = useState('Name');
+    const [count, setCount] = useState('Initial value');
+    const onSubmit = () => {
+        props.onSubmit(name, count);
+        setName('');
+        setCount('');
+    };
 
-        Counter name<strong> {props.name} </strong>
-        Counter value<strong> {props.count} </strong>
-        <button onClick={()=>props.decrement(props.id)}>-</button>
-        <button onClick={()=>props.increment(props.id)}>+</button>
-        <button onClick={()=>props.purify(props.id)}>Purify</button>
-    </div>
-  );
+    return (
+        <div className='row'>
+            <div className="col">
+            <strong> Add new counter </strong>
+            <input type='text' name='name' value={name} onChange={e => setName(e.target.value)}
+                   className='form-control'/>
+            <input type='text' name='count' value={count} onChange={e => setCount(e.target.value)}
+                   className='form-control '/>
+            <button onClick={() => onSubmit(name, count)}>Add counter</button>
+            </div>
+        </div>
+    );
 }
 
-export default Counter;
+export default AddCounterForm;
