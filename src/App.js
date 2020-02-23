@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import Counter from "./Counter";
 import AddCounterForm from "./AddCounterForm";
 import 'bootstrap/dist/css/bootstrap.css';
+import ModalWindow from "./ModalWindow";
+
+
 
 function App() {
     const InitialCountersState = [
@@ -50,9 +53,10 @@ function App() {
 
     return (
         <div className='container'>
-            <h1>Counters</h1>
-            Total {counters.reduce((a, c) => a + c.count, 0)}
-            <button onClick={resetTotalCount} className='bt btn-danger'>Reset total count</button>
+            <h1 className=''>Total: {counters.reduce((a, c) => a + c.count, 0)}</h1>
+            <hr/>
+            <h2 className='page-header'>Counters</h2>
+            <button onClick={resetTotalCount} className='btn btn-primary'>Reset total count</button>
             <hr/>
             {
                 counters.map(el => <Counter key={el.id}
@@ -61,11 +65,14 @@ function App() {
                                             count={el.count}
                                             increment={incrementCounter}
                                             decrement={decrementCounter}
+                                          //  deleteselectedcounter={deleteselectedcounter}
+                    // clean={cleanCounter}
                                             purify={purifyCounter}
                 />)
             }
             <hr/>
             <AddCounterForm onSubmit={addCounter}/>
+            <ModalWindow/>
         </div>
     );
 }
