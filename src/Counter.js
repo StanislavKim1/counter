@@ -1,6 +1,7 @@
 import React from 'react';
 
 function Counter(props) {
+    const {counter, increment, decrement, purify} = props;
     return (
         <table className='.table-borderless'>
             <thead>
@@ -10,16 +11,16 @@ function Counter(props) {
                         <th scope="row">
                             <th scope="col">
                                 <td colSpan="3">
-                                    <strong className='col-sm'> {props.id} </strong>
-                                    <strong className='col-sm'> {props.name} </strong>
-                                    <button onClick={() => props.decrement(props.id)}
+                                    <strong className='col-sm'> {counter.id} </strong>
+                                    <strong className='col-sm'> {counter.name} </strong>
+                                    <button onClick={() => decrement(counter.id)}
                                             className='btn btn-primary row-cols-1'>-
                                     </button>
-                                    <strong className='col-sm'> {props.count} </strong>
-                                    <button onClick={() => props.increment(props.id)}
+                                    <strong className='col-sm'> {counter.count} </strong>
+                                    <button onClick={() => increment(counter.id)}
                                             className='btn btn-primary btn-group mr-2'>+
                                     </button>
-                                    <button onClick={() => props.purify(props.id)}
+                                    <button onClick={() => purify(counter)}
                                             className='btn btn-danger btn-secondary'>Purify
                                     </button>
                                 </td>

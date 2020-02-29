@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da0fd004-cd5a-4648-a21b-3d8f24239d6b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ModalWindow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ConfirmationDelete.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddCounterForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddCounterForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Counter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +47,18 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.predeploy">
+  <component name="RunManager" selected="npm.deploy">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -85,8 +93,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.predeploy" />
         <item itemvalue="npm.deploy" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.predeploy" />
       </list>
     </recent_temporary>
   </component>
@@ -105,7 +114,11 @@
       <workItem from="1582391108892" duration="5772000" />
       <workItem from="1582413150939" duration="11146000" />
       <workItem from="1582438180820" duration="2232000" />
-      <workItem from="1582476802672" duration="3581000" />
+      <workItem from="1582476802672" duration="4874000" />
+      <workItem from="1582603984473" duration="5358000" />
+      <workItem from="1582874626103" duration="210000" />
+      <workItem from="1582895027869" duration="3452000" />
+      <workItem from="1582956727810" duration="7640000" />
     </task>
     <servers />
   </component>
@@ -113,29 +126,42 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1222" height="160" key="GridCell.Tab.0.bottom" timestamp="1582399423000">
-      <screen x="0" y="23" width="1280" height="721" />
+    <state width="847" height="160" key="GridCell.Tab.0.bottom" timestamp="1582482793940">
+      <screen x="0" y="23" width="1280" height="723" />
     </state>
     <state width="1222" height="160" key="GridCell.Tab.0.bottom/0.23.1280.721@0.23.1280.721" timestamp="1582399423000" />
-    <state width="1222" height="160" key="GridCell.Tab.0.bottom/0.23.1280.723@0.23.1280.723" timestamp="1582398691130" />
-    <state width="1222" height="160" key="GridCell.Tab.0.center" timestamp="1582399422994">
-      <screen x="0" y="23" width="1280" height="721" />
+    <state width="847" height="160" key="GridCell.Tab.0.bottom/0.23.1280.723@0.23.1280.723" timestamp="1582482793940" />
+    <state width="847" height="160" key="GridCell.Tab.0.center" timestamp="1582482793938">
+      <screen x="0" y="23" width="1280" height="723" />
     </state>
     <state width="1222" height="160" key="GridCell.Tab.0.center/0.23.1280.721@0.23.1280.721" timestamp="1582399422994" />
-    <state width="1222" height="160" key="GridCell.Tab.0.center/0.23.1280.723@0.23.1280.723" timestamp="1582398691129" />
-    <state width="1222" height="160" key="GridCell.Tab.0.left" timestamp="1582399422992">
-      <screen x="0" y="23" width="1280" height="721" />
+    <state width="847" height="160" key="GridCell.Tab.0.center/0.23.1280.723@0.23.1280.723" timestamp="1582482793938" />
+    <state width="847" height="160" key="GridCell.Tab.0.left" timestamp="1582482793937">
+      <screen x="0" y="23" width="1280" height="723" />
     </state>
     <state width="1222" height="160" key="GridCell.Tab.0.left/0.23.1280.721@0.23.1280.721" timestamp="1582399422992" />
-    <state width="1222" height="160" key="GridCell.Tab.0.left/0.23.1280.723@0.23.1280.723" timestamp="1582398691128" />
-    <state width="1222" height="160" key="GridCell.Tab.0.right" timestamp="1582399422999">
-      <screen x="0" y="23" width="1280" height="721" />
+    <state width="847" height="160" key="GridCell.Tab.0.left/0.23.1280.723@0.23.1280.723" timestamp="1582482793937" />
+    <state width="847" height="160" key="GridCell.Tab.0.right" timestamp="1582482793939">
+      <screen x="0" y="23" width="1280" height="723" />
     </state>
     <state width="1222" height="160" key="GridCell.Tab.0.right/0.23.1280.721@0.23.1280.721" timestamp="1582399422998" />
-    <state width="1222" height="160" key="GridCell.Tab.0.right/0.23.1280.723@0.23.1280.723" timestamp="1582398691129" />
-    <state x="325" y="68" key="search.everywhere.popup" timestamp="1582344791837">
-      <screen x="0" y="23" width="1280" height="721" />
+    <state width="847" height="160" key="GridCell.Tab.0.right/0.23.1280.723@0.23.1280.723" timestamp="1582482793939" />
+    <state x="325" y="68" width="670" height="676" key="search.everywhere.popup" timestamp="1582962532086">
+      <screen x="0" y="23" width="1280" height="724" />
     </state>
     <state x="325" y="68" key="search.everywhere.popup/0.23.1280.721@0.23.1280.721" timestamp="1582344791837" />
+    <state x="325" y="68" width="670" height="676" key="search.everywhere.popup/0.23.1280.724@0.23.1280.724" timestamp="1582962532086" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/ConfirmationDelete.js</url>
+          <line>11</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

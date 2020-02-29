@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import Counter from "./Counter";
 import AddCounterForm from "./AddCounterForm";
 import 'bootstrap/dist/css/bootstrap.css';
-import ModalWindow from "./ModalWindow";
-
+import ConfirmationDelete from "./ConfirmationDelete";
 
 
 function App() {
@@ -15,8 +14,9 @@ function App() {
     ];
 
     const [counters, setCounters] = useState(InitialCountersState);
+    const [confirmCounter, setConfirmCounter] = useState({});
+
     const resetTotalCount = () => {
-        console.log('works!');
         const newCounters = counters.map(el => ({...el, count: 0}));
         setCounters(newCounters);
     };
@@ -28,6 +28,7 @@ function App() {
         newCounters[index].count = counters[index].count + 1;
         setCounters(newCounters);
     };
+
     const decrementCounter = (id) => {
         console.log('DECR ' + id);
         const newCounters = counters.map(el => {
@@ -37,9 +38,19 @@ function App() {
         setCounters(newCounters);
     };
 
-    const purifyCounter = (id) => {
-        const newCounters = counters.filter(el => el.id !== id);
+    const confirmRemoveCounter = counter => {
+        setConfirmCounter(counter);
+
+    };
+
+    const removeConfirm = id => {
+        const newCounters = counters.filter(el => el.id !== confirmCounter.id);
         setCounters(newCounters);
+        setConfirmCounter({})
+    };
+
+    const confirmDeleteCancel = () => {
+        setConfirmCounter({});
     };
 
     const addCounter = (name, count) => {
@@ -60,19 +71,20 @@ function App() {
             <hr/>
             {
                 counters.map(el => <Counter key={el.id}
-                                            id={el.id}
-                                            name={el.name}
-                                            count={el.count}
+                                            counter={el}
                                             increment={incrementCounter}
                                             decrement={decrementCounter}
-                                          //  deleteselectedcounter={deleteselectedcounter}
-                    // clean={cleanCounter}
-                                            purify={purifyCounter}
+                                            purify={confirmRemoveCounter}
                 />)
             }
             <hr/>
             <AddCounterForm onSubmit={addCounter}/>
-            <ModalWindow/>
+            <ConfirmationDelete
+                name={confirmCounter.name}
+                onSuccess={removeConfirm}
+                onCancel={confirmDeleteCancel}
+            />
+
         </div>
     );
 }
